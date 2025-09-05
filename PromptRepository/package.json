@@ -1,0 +1,33 @@
+{
+  "name": "prompt-repository",
+  "version": "0.2.0",
+  "description": "Managing Prompts and standardised Unit Evals ",
+  "main": "dist/src/entry.js",
+  "directories": {
+    "src": "src",
+    "test": "test"
+  },
+  "author": "Jon Verrier",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node entry.ts",
+    "build": "tsc -b",
+    "install": "echo \"No local packages.\"",
+    "make_prompt_ids": "ts-node src/MakePromptIds.ts",
+    "watch": "tsc -b -w",
+    "clean": "rimraf dist",
+    "test": "mocha --require ts-node/register --extensions ts,js Test/**/*.test.ts --exit",
+    "test-mini": "mocha --require ts-node/register --extensions ts,js Test/**/*.test.ts -g \"stream\" --exit"    
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.13.8",
+    "expect": "^29.7.0",
+    "mocha": "^11.0.1",
+    "openai": "^4.89.1",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.8.1",
+    "typescript": "^5.7.3"
+  }
+}
